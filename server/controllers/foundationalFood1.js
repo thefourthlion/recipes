@@ -23,13 +23,19 @@ exports.createfoundationalFood1 = async (req, res) => {
   }
 };
 exports.readfoundationalFood1 = async (req, res) => {
+  const page = req.query.page || 0;
+  const limit = req.query.limit || 25;
   try {
-    foundationalFood1.find({}, (err, result) => {
-      if (err) {
-        res.json({ app: err });
-      }
-      res.send(result);
-    });
+    foundationalFood1
+      .find({}, (err, result) => {
+        if (err) {
+          res.json({ app: err });
+        }
+        res.send(result);
+      })
+      .sort()
+      .skip(page * limit)
+      .limit(limit);
   } catch (err) {
     console.log(err);
   }

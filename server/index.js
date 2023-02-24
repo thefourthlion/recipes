@@ -40,3 +40,4 @@ app.listen(PORT, () => {
 });
 
 app.use("/api/foundationalFood1", require("./routes/foundationalFood1"));
+app.use("/api/surveyFood", require("./routes/surveyFood"));
