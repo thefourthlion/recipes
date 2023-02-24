@@ -5,15 +5,21 @@ const foundationalFood2Schema = new mongoose.Schema(
     description: {
       type: String,
     },
-    foodNutrients: {
-      type: String,
-    },
-    foodAttributes: {
-      type: String,
-    },
-    nutrientConversionFactors: {
-      type: String,
-    },
+    foodNutrients: [
+      {
+        type: String,
+      },
+    ],
+    foodAttributes: [
+      {
+        type: String,
+      },
+    ],
+    nutrientConversionFactors: [
+      {
+        type: String,
+      },
+    ],
     isHistoricalReference: {
       type: String,
     },
@@ -23,10 +29,12 @@ const foundationalFood2Schema = new mongoose.Schema(
     foodCategory: {
       type: String,
     },
-    foodPortions: {
-      type: String,
-    },
-    inputFoods: { type: String },
+    foodPortions: [
+      {
+        type: String,
+      },
+    ],
+    inputFoods: [{ type: String }],
     publicationDate: {
       type: String,
     },
