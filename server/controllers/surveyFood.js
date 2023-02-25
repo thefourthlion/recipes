@@ -40,6 +40,26 @@ exports.readsurveyFood = async (req, res) => {
     console.log(err);
   }
 };
+
+exports.readsurveyFoodFromName = async (req, res) => {
+  const limit = req.query.limit || 25;
+  try {
+    surveyFood
+      .find(
+        { description: { $regex: req.params.name, $options: "i" } },
+        (err, result) => {
+          if (err) {
+            res.json({ app: err });
+          }
+          res.send(result);
+        }
+      )
+      .limit(limit);
+  } catch (err) {
+    console.log(err);
+  }
+};
+
 exports.readsurveyFoodFromID = async (req, res) => {
   try {
     await surveyFood.findById({ _id: req.params.id }, {}, (err, result) => {

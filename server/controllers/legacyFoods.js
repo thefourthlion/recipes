@@ -42,6 +42,26 @@ exports.readlegacyFoods = async (req, res) => {
     console.log(err);
   }
 };
+
+exports.readlegacyFoodsFromName = async (req, res) => {
+  const limit = req.query.limit || 25;
+  try {
+    legacyFoods
+      .find(
+        { description: { $regex: req.params.name, $options: "i" } },
+        (err, result) => {
+          if (err) {
+            res.json({ app: err });
+          }
+          res.send(result);
+        }
+      )
+      .limit(limit);
+  } catch (err) {
+    console.log(err);
+  }
+};
+
 exports.readlegacyFoodsFromID = async (req, res) => {
   try {
     await legacyFoods.findById({ _id: req.params.id }, {}, (err, result) => {

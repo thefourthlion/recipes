@@ -40,6 +40,26 @@ exports.readfoundationalFood2 = async (req, res) => {
     console.log(err);
   }
 };
+
+exports.readfoundationalFood2FromName = async (req, res) => {
+  const limit = req.query.limit || 25;
+  try {
+    foundationalFood2
+      .find(
+        { description: { $regex: req.params.name, $options: "i" } },
+        (err, result) => {
+          if (err) {
+            res.json({ app: err });
+          }
+          res.send(result);
+        }
+      )
+      .limit(limit);
+  } catch (err) {
+    console.log(err);
+  }
+};
+
 exports.readfoundationalFood2FromID = async (req, res) => {
   try {
     await foundationalFood2.findById(
