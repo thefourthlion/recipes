@@ -7,9 +7,9 @@ const {
   updatelegacyFoods,
   deletelegacyFoods,
 } = require("../controllers/legacyFoods");
-router.route("/create").post(createlegacyFoods);
+// router.route("/create").post(createlegacyFoods);
 router.route("/read").get(readlegacyFoods);
 router.route("/read/:id").get(readlegacyFoodsFromID);
-router.route("/update/:id").post(updatelegacyFoods);
-router.route("/delete/:id").delete(deletelegacyFoods);
+// router.route("/update/:id").post(updatelegacyFoods);
+// router.route("/delete/:id").delete(deletelegacyFoods);
 module.exports = router;

@@ -7,9 +7,9 @@ const {
   updatefoundationalFood2,
   deletefoundationalFood2,
 } = require("../controllers/foundationalFood2");
-router.route("/create").post(createfoundationalFood2);
+// router.route("/create").post(createfoundationalFood2);
 router.route("/read").get(readfoundationalFood2);
 router.route("/read/:id").get(readfoundationalFood2FromID);
-router.route("/update/:id").post(updatefoundationalFood2);
-router.route("/delete/:id").delete(deletefoundationalFood2);
+// router.route("/update/:id").post(updatefoundationalFood2);
+// router.route("/delete/:id").delete(deletefoundationalFood2);
 module.exports = router;
