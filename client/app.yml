@@ -1,0 +1,5 @@
+apps:
+  - script: ./server.js
+    cwd: /home/food-db/food-db/client/
+    name: "food-db-client"
+    interpreter: /usr/bin/node
