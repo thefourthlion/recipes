@@ -1,0 +1,25 @@
+.Ingredients {
+  .container {
+    background-color: purple;
+    margin: 2px;
+    width: 250px;
+    height: 250px;
+  }
+
+  .add-btn {
+    padding: 0px 3px 2px 3px;
+    margin-left: 15px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+  }
+
+  .add-btn:hover {
+    cursor: pointer;
+    box-shadow: 9px 9px 4px -6px hsla(0, 0%, 0%, 0.3);
+  }
+
+  .content-header {
+    white-space: nowrap;
+  }
+}
