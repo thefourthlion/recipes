@@ -10,25 +10,29 @@ const SearchIngredient = () => {
   const [searchResults, setSearchResults] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [searchId, setSearchId] = useState("");
-  const [pageSize, setPageSize] = useState("10");
+  const [pageSize, setPageSize] = useState(12);
   const [pageNumber, setPageNumber] = useState("");
   const foodUrl = `https://api.nal.usda.gov/fdc/v1/food/`;
 
-  const Ingredients = ({ name, id }) => {
+  const Ingredients = ({ name, brandName, id, additionalDescriptions }) => {
     return (
       <div className="Ingredients">
         <div className="container">
           <h1 className="content-header">
-            {name}
+            {brandName} {brandName != undefined && "-"} {name}
+            {console.log(brandName)}
             <span
               className="add-btn"
               onClick={() => {
-                setSearchId(id);
+                setSearchId(id)
+                  .then(searchFoodItem())
+                  .then(setSearchResults([]));
               }}
             >
               +
             </span>
           </h1>
+          {/* <h3>{additionalDescriptions}</h3> */}
         </div>
       </div>
     );
@@ -44,9 +48,9 @@ const SearchIngredient = () => {
         console.log(element.description)
       );
       // let nutrients = foods[0].foodNutrients;
-      console.log(data);
-      console.log(foods[0].fdcId);
-      console.log(foodNames);
+      // console.log(data);
+      // console.log(foods[0].fdcId);
+      // console.log(foodNames);
       // console.log(nutrients);
       setSearchResults(data.foods);
     });
@@ -91,20 +95,25 @@ const SearchIngredient = () => {
             {searchResults.map((val) => {
               return (
                 <Col>
-                  <Ingredients name={val.description} id={val.fdcId} />
+                  <Ingredients
+                    name={val.description}
+                    brandName={val.brandName}
+                    id={val.fdcId}
+                    additionalDescriptions={val.additionalDescriptions}
+                  />
                 </Col>
               );
             })}
           </Row>
         </Container>
-
         <button
-          className="primary-btn"
           onClick={() => {
-            searchFoodItem();
+            setPageSize(pageSize + 12);
+            getSearchResults();
           }}
+          className="primary-btn"
         >
-          Search Food Item
+          View More
         </button>
       </div>
     </div>
