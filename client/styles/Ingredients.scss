@@ -1,10 +1,10 @@
 .Ingredients {
-  .container {
-    background-color: purple;
-    margin: 2px;
+  margin-top: 20px;
 
-    width: 250px;
-    height: 250px;
+  .container {
+    padding: 25px;
+    background-color: purple;
+    min-width: 250px;
   }
 
   .add-btn {

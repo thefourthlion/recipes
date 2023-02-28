@@ -18,7 +18,7 @@ const SearchIngredient = () => {
     return (
       <div className="Ingredients">
         <div className="container">
-          <h1 className="content-header">
+          <h4 className="content-header">
             {brandName} {brandName != undefined && "-"} {name}
             {console.log(brandName)}
             <span
@@ -31,8 +31,7 @@ const SearchIngredient = () => {
             >
               +
             </span>
-          </h1>
-          {/* <h3>{additionalDescriptions}</h3> */}
+          </h4>
         </div>
       </div>
     );
@@ -90,7 +89,7 @@ const SearchIngredient = () => {
           Search
         </button>
 
-        <Container fluid="md">
+        <Container fluid="md" className="ingredient-container">
           <Row>
             {searchResults.map((val) => {
               return (
