@@ -17,10 +17,11 @@ const CostCalculator = () => {
     let costPerGram = costPerOz / 28.34;
 
     let totalCostPerGrams = grUsed * costPerGram;
+    let totalCost = totalCostPerGrams.toFixed(2);
     // alert(
     //   `Cost per OZ: ${costPerOz} | Cost per Gram: ${costPerGram} | TotalCost ${totalCostPerGrams}`
     // );
-    setTotal(totalCostPerGrams);
+    setTotal(totalCost);
   };
 
   return (
