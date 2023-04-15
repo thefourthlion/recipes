@@ -6,6 +6,7 @@ import "../styles/Recipe.scss";
 import "../styles/Recipes.scss";
 import "../styles/AddRecipe.scss";
 import "../styles/globals.scss";
+import "bootstrap/dist/css/bootstrap.css";
 function MyApp({ Component, pageProps }) {
   return <Component {...pageProps} />;
 }
