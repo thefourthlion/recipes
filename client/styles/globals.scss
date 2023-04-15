@@ -1,1 +1,42 @@
-.Home{}
+@import "./variables.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  .search-input {
+    background-color: $white;
+    border-radius: 5px;
+    border-color: $black;
+  }
+
+  .search-input-form-control:focus {
+    background-color: $white;
+    border-color: $primary-color;
+    box-shadow: none;
+    outline: 0 none;
+    color: $black;
+    box-shadow: 9px 9px 4px -6px hsla(0, 0%, 0%, 0.3);
+  }
+
+  .primary-btn {
+    background-color: $primary-color;
+    border: 2px solid $primary-color;
+    border-radius: 5px;
+    height: 57px;
+    min-width: 250px;
+    font-size: 1.25rem;
+    padding-top: 3px;
+    cursor: pointer;
+  }
+
+  .primary-btn:hover {
+    background-color: $white;
+    border: 2px solid $primary-color;
+    border-radius: 5px;
+    box-shadow: 9px 9px 4px -6px hsla(0, 0%, 0%, 0.3);
+  }
+}
