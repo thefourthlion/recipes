@@ -45,9 +45,9 @@ const AddRecipe = () => {
 
   // Function to send the recipe to the server
   const sendRecipeToDb = () => {
-    Axios.post("https://api.recipes.everettdeleon.com/api/recipe/create", {
+    Axios.post("http://localhost:3002/api/recipes/create", {
       name: name,
-      instructions: instructions,
+      Instructions: instructions,
       ingredients: ingredients,
       amount: amountOfIngredients,
       cost: totalCostRounded,
@@ -227,7 +227,7 @@ const AddRecipe = () => {
           <button
             className="primary-btn submit-btn"
             onClick={() => {
-              setShowIngredients(!showIngredients);
+              sendRecipeToDb();
             }}
           >
             Submit Recipe
