@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const RecipesSchema = new mongoose.Schema(
   {
     name: { type: String, required: [true, "Please provide name"] },
-    Instructions: {
+    instructions: {
       type: String,
       required: [true, "Please provide Instructions"],
     },

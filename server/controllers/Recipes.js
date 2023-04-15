@@ -1,11 +1,9 @@
 const Recipes = require("../models/Recipes");
 exports.createRecipes = async (req, res) => {
-  const page = req.query.page || 0;
-  const limit = req.query.limit || 25;
   try {
     let newRecipes = new Recipes({
       name: req.body.name,
-      Instructions: req.body.Instructions,
+      instructions: req.body.Instructions,
       ingredients: req.body.ingredients,
       amount: req.body.amount,
       cost: req.body.cost,
@@ -20,6 +18,8 @@ exports.createRecipes = async (req, res) => {
   }
 };
 exports.readRecipes = async (req, res) => {
+  const page = req.query.page || 0;
+  const limit = req.query.limit || 25;
   try {
     Recipes.find({}, (err, result) => {
       if (err) {
@@ -52,7 +52,7 @@ exports.updateRecipes = async (req, res) => {
       req.params.id,
       {
         name: req.body.name,
-        Instructions: req.body.Instructions,
+        instructions: req.body.Instructions,
         ingredients: req.body.ingredients,
         amount: req.body.amount,
         cost: req.body.cost,
