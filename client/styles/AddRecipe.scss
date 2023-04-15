@@ -1,2 +1,25 @@
 .AddRecipe {
+  .show-ing-btn {
+    margin: 25px 0 12.5px 0;
+  }
+
+  .submit-btn {
+    margin: 12.5px 0 25px 0;
+  }
+
+  .recipe-inputs {
+    width: calc(50vw + 25px);
+    margin: 25px auto 0 auto;
+  }
+  .ingredient-containers {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .contained-recipe-inputs {
+    margin: 12.5px;
+    width: 25vw;
+  }
 }
