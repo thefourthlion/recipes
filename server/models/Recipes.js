@@ -6,18 +6,19 @@ const RecipesSchema = new mongoose.Schema(
       type: String,
       required: [true, "Please provide Instructions"],
     },
-    ingredients: {
-      type: String,
-      required: [true, "Please provide ingredients"],
-    },
-    amount: { type: String, required: [true, "Please provide amount"] },
-    cost: { type: String, required: [true, "Please provide cost"] },
-    timestamp: { type: String, required: [true, "Please provide timestamp"] },
-    image: { type: String, required: [true, "Please provide image"] },
+    ingredients: [
+      {
+        type: String,
+        required: [true, "Please provide ingredients"],
+      },
+    ],
+    amount: [{ type: String, required: [true, "Please provide amount"] }],
+    cost: { type: String },
+    image: { type: String },
     servingCost: {
       type: String,
-      required: [true, "Please provide servingCost"],
     },
+    timestamp: { type: String, required: [true, "Please provide timestamp"] },
   },
   { timestamps: true }
 );
