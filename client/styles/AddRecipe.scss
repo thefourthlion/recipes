@@ -1,8 +1,8 @@
 .AddRecipe {
   margin-top: 75px;
 
-  .show-ing-btn {
-    margin: 25px 0 12.5px 0;
+  .ing-inputs {
+    margin-bottom: 10px;
   }
 
   .submit-btn {
@@ -10,8 +10,7 @@
   }
 
   .recipe-inputs {
-    width: calc(50vw + 25px);
-    margin: 25px auto 0 auto;
+    margin-top: 10px;
   }
   .ingredient-containers {
     display: flex;

@@ -6,10 +6,8 @@ export default function Home() {
   return (
     <div className="Home">
       <AddRecipe />
-      <hr />
       <ServingCostCalc />
       <IngredientCostCalc />
-      <hr />
       <Recipes />
     </div>
   );

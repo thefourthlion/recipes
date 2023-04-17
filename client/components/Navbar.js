@@ -29,7 +29,7 @@ export default function Navbar() {
       </ul>
 
       <Link href="/" className="pc-none">
-        Home
+        <h1>Recipes</h1>
       </Link>
 
       <div className="burger" onClick={() => setShowLinks(!showLinks)}>

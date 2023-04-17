@@ -104,51 +104,51 @@ const AddRecipe = () => {
             }}
           />
         </FloatingLabel>
-        <Container fluid="md" className="ingredient-container">
-          {/* // form for adding ingredients to the recipe  */}
-          <h1>Add An Ingredient</h1>
-          <Row>
-            <Col>
-              <FloatingLabel className="search-input-label" label="Ingredient">
-                <Form.Control
-                  className="search-input-form-control search-input"
-                  type="text"
-                  placeholder="Ingredient"
-                  value={currentIngredient}
-                  onChange={(e) => {
-                    setCurrentIngredient(e.target.value);
-                  }}
-                ></Form.Control>
-              </FloatingLabel>
-            </Col>
-            <Col>
-              <FloatingLabel className="search-input-label" label="Amount">
-                <Form.Control
-                  className="search-input-form-control search-input"
-                  type="text"
-                  placeholder="Amount"
-                  value={currentAmount}
-                  onChange={(e) => {
-                    setCurrentAmount(e.target.value);
-                  }}
-                ></Form.Control>
-              </FloatingLabel>
-            </Col>
-            <Col>
-              <FloatingLabel className="search-input-label" label="Cost $">
-                <Form.Control
-                  className="search-input-form-control search-input"
-                  type="text"
-                  placeholder="Cost $"
-                  value={currentCost}
-                  onChange={(e) => {
-                    setCurrentCost(e.target.value);
-                  }}
-                ></Form.Control>
-              </FloatingLabel>
-            </Col>
-          </Row>
-        </Container>
+        {/* <Container className="ingredient-container"> */}
+        {/* // form for adding ingredients to the recipe  */}
+        <h1>Add An Ingredient</h1>
+        <Row>
+          <Col className="ing-inputs" md>
+            <FloatingLabel className="search-input-label" label="Ingredient">
+              <Form.Control
+                className="search-input-form-control search-input"
+                type="text"
+                placeholder="Ingredient"
+                value={currentIngredient}
+                onChange={(e) => {
+                  setCurrentIngredient(e.target.value);
+                }}
+              ></Form.Control>
+            </FloatingLabel>
+          </Col>
+          <Col className="ing-inputs" md>
+            <FloatingLabel className="search-input-label" label="Amount">
+              <Form.Control
+                className="search-input-form-control search-input"
+                type="text"
+                placeholder="Amount"
+                value={currentAmount}
+                onChange={(e) => {
+                  setCurrentAmount(e.target.value);
+                }}
+              ></Form.Control>
+            </FloatingLabel>
+          </Col>
+          <Col className="ing-inputs" md>
+            <FloatingLabel className="search-input-label" label="Cost $">
+              <Form.Control
+                className="search-input-form-control search-input"
+                type="text"
+                placeholder="Cost $"
+                value={currentCost}
+                onChange={(e) => {
+                  setCurrentCost(e.target.value);
+                }}
+              ></Form.Control>
+            </FloatingLabel>
+          </Col>
+        </Row>
+        {/* </Container> */}
         {/* // If there are ingredients, show them */}
         {ingredients.length > 0 && (
           <Container>

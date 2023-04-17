@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <div className="Footer">
+    <div className="Footer phone-none">
       <div className="container">
         <li>
           <Link href="/">Home</Link>
