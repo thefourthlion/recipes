@@ -1,0 +1,5 @@
+apps:
+  - script: ./index.js
+    cwd: /home/thefourthlion/recipes/server/
+    name: "recipes-server"
+    interpreter: /usr/bin/node

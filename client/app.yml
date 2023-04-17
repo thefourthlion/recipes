@@ -1,5 +1,5 @@
 apps:
   - script: ./server.js
-    cwd: /home/food-db/food-db/client/
-    name: "food-db-client"
+    cwd: /home/thefourthlion/recipes/client/
+    name: "recipe-client"
     interpreter: /usr/bin/node
