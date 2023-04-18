@@ -45,7 +45,7 @@ const AddRecipe = () => {
 
   // Function to send the recipe to the server
   const sendRecipeToDb = () => {
-    Axios.post("http://localhost:3002/api/recipes/create", {
+    Axios.post("https://api.recipes.everettdeleon.com/api/recipes/create", {
       name: name,
       Instructions: instructions,
       ingredients: ingredients,

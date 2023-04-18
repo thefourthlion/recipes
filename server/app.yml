@@ -1,5 +1,5 @@
 apps:
   - script: ./index.js
-    cwd: /home/thefourthlion/recipes/server/
+    cwd: /home/everettdeleon/recipes/server/
     name: "recipes-server"
     interpreter: /usr/bin/node

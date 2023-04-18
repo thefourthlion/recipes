@@ -8,11 +8,13 @@ const Recipes = () => {
   }, []);
 
   const getBook = () => {
-    Axios.get("http://localhost:3002/api/recipes/read").then((res) => {
-      const data = res.data;
-      setRecipes(data);
-      console.log(data);
-    });
+    Axios.get("https://api.recipes.everettdeleon.com/api/recipes/read").then(
+      (res) => {
+        const data = res.data;
+        setRecipes(data);
+        console.log(data);
+      }
+    );
   };
   return (
     <div className="Recipes">
@@ -23,7 +25,7 @@ const Recipes = () => {
             <div>
               <h1>{val.name}</h1>
 
-              <a href={`http://localhost:3000/recipe/${val._id}`}>
+              <a href={`https://recipes.everettdeleon.com/recipe/${val._id}`}>
                 <button className="primary-btn">View Recipe</button>
               </a>
             </div>

@@ -1,5 +1,5 @@
 apps:
   - script: ./server.js
-    cwd: /home/thefourthlion/recipes/client/
+    cwd: /home/everettdeleon/recipes/client/
     name: "recipe-client"
     interpreter: /usr/bin/node
