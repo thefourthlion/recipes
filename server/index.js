@@ -37,4 +37,4 @@ app.get("/", (req, res) => {
 app.listen(PORT, () => {
   console.log("✅ Listening on port " + PORT);
 });
-app.use("/api/recipes", require("./routes/recipes"));
+app.use("/api/recipes", require("./routes/Recipes"));
