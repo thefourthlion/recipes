@@ -1,5 +1,13 @@
+@import "./variables.scss";
 .AddRecipe {
   margin-top: 100px;
+
+  .recipe-img {
+    border-radius: 50px;
+    max-width: 520px;
+    height: auto;
+    margin: 0 auto;
+  }
 
   .show-calc-btn {
     margin-top: 10px;

@@ -154,6 +154,13 @@ const AddRecipe = () => {
         {ingredients.length > 0 && (
           <Container>
             <Row>
+              <h1>{name} recipe</h1>
+            </Row>
+
+            <Row>
+              <h1>{instructions}</h1>
+            </Row>
+            <Row>
               <Col>
                 <h1>Ingredients</h1>
                 {ingredients.map((val) => (
@@ -172,6 +179,9 @@ const AddRecipe = () => {
                   <h3>${val}</h3>
                 ))}
               </Col>
+            </Row>
+            <Row>
+              <img src={image} className="recipe-img" />
             </Row>
           </Container>
         )}
