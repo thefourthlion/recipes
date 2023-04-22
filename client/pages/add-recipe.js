@@ -5,7 +5,8 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
-
+import ServingCostCalc from "../components/ServingCostCalc";
+import IngredientCostCalc from "../components/IngredientCostCalc";
 const AddRecipe = () => {
   // Declaring and initializing state variables using the useState hook
   const [name, setName] = useState("");
@@ -19,7 +20,7 @@ const AddRecipe = () => {
   const [currentAmount, setCurrentAmount] = useState("");
   const [currentCost, setCurrentCost] = useState();
   const [totalCostRounded, setTotalCostRounded] = useState();
-
+  const [showCalculators, setShowCalculators] = useState(false);
   const [showIngredients, setShowIngredients] = useState(false);
 
   let totalCost = 0;
@@ -174,6 +175,7 @@ const AddRecipe = () => {
             </Row>
           </Container>
         )}
+
         {/* // if user filled out the input fields allow user to submit data */}
         {(currentAmount != "") & (currentIngredient != "") ? (
           <div>
@@ -196,6 +198,7 @@ const AddRecipe = () => {
         ) : (
           ""
         )}
+
         {/* // if user added cost, allow user to calculate the total */}
         {ingredientCosts.length > 0 ? (
           <div>
@@ -234,6 +237,22 @@ const AddRecipe = () => {
           </button>
         ) : (
           ""
+        )}
+
+        <button
+          className="primary-btn show-calc-btn"
+          onClick={() => {
+            setShowCalculators(!showCalculators);
+          }}
+        >
+          Show Calculators
+        </button>
+
+        {showCalculators && (
+          <div>
+            <ServingCostCalc />
+            <IngredientCostCalc />
+          </div>
         )}
       </div>
     </div>
