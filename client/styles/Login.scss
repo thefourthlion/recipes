@@ -1,9 +1,9 @@
 .Login {
   margin-top: 75px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  .container {
+    max-width: 520px;
+    margin: 0 auto;
+  }
   h1 {
     margin-bottom: 25px;
   }
@@ -12,6 +12,13 @@
   }
 
   button {
+    max-width: 520px;
     height: 55px;
+  }
+
+  @media only screen and (min-width: 900px) {
+    button {
+      width: 497px;
+    }
   }
 }

@@ -4,10 +4,10 @@ const Recipes = () => {
   const [recipes, setRecipes] = useState([]);
 
   useEffect(() => {
-    getBook();
+    getRecipe();
   }, []);
 
-  const getBook = () => {
+  const getRecipe = () => {
     Axios.get("https://api.recipes.everettdeleon.com/api/recipes/read").then(
       (res) => {
         const data = res.data;
@@ -16,6 +16,7 @@ const Recipes = () => {
       }
     );
   };
+
   return (
     <div className="Recipes">
       <div className="container">
@@ -25,7 +26,7 @@ const Recipes = () => {
             <div>
               <h1>{val.name}</h1>
 
-              <a href={`https://recipes.everettdeleon.com/recipe/${val._id}`}>
+              <a href={`/recipe/${val._id}`}>
                 <button className="primary-btn">View Recipe</button>
               </a>
             </div>

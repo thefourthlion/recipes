@@ -13,7 +13,9 @@ const Recipe = () => {
   const { id } = router.query;
 
   const findRecipe = () => {
-    Axios.get(`http://localhost:3002/api/recipes/read/${id}`).then((res) => {
+    Axios.get(
+      `https://api.recipes.everettdeleon.com/api/recipes/read/${id}`
+    ).then((res) => {
       const data = res.data;
 
       setRecipe(data);
