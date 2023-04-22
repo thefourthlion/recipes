@@ -27,7 +27,7 @@ const Recipes = () => {
               <h1>{val.name}</h1>
 
               <a href={`/recipe/${val._id}`}>
-                <button className="primary-btn">View Recipe</button>
+                <button className="third-btn">View Recipe</button>
               </a>
             </div>
           );

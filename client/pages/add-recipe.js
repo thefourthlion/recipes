@@ -227,20 +227,23 @@ const AddRecipe = () => {
         {/* // if there is at least one ingredient and amount, allow them to submit recipe*/}
 
         {(ingredients.length > 0) & (amountOfIngredients.length > 0) ? (
-          <button
-            className="primary-btn submit-btn"
-            onClick={() => {
-              sendRecipeToDb();
-            }}
-          >
-            Submit Recipe
-          </button>
+          <div>
+            <button
+              className="primary-btn submit-btn"
+              onClick={() => {
+                sendRecipeToDb();
+              }}
+            >
+              Submit Recipe
+            </button>
+            <br />
+          </div>
         ) : (
           ""
         )}
 
         <button
-          className="primary-btn show-calc-btn"
+          className="secondary-btn show-calc-btn"
           onClick={() => {
             setShowCalculators(!showCalculators);
           }}
