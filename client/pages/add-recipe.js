@@ -164,6 +164,28 @@ const AddRecipe = () => {
             </FloatingLabel>
           </Col>
         </Row>
+
+        {(currentAmount != "") & (currentIngredient != "") ? (
+          <div>
+            <button
+              className="primary-btn submit-btn"
+              onClick={() => {
+                setIngredientCosts([
+                  ...ingredientCosts,
+                  parseFloat(currentCost),
+                ]);
+                setAmountOfIngredients([...amountOfIngredients, currentAmount]);
+                setIngredients([...ingredients, currentIngredient]);
+                handleClearInput();
+              }}
+            >
+              + Ingredient
+            </button>
+            <br />
+          </div>
+        ) : (
+          ""
+        )}
         {/* </Container> */}
         {/* // If there are ingredients, show them */}
         {ingredients.length > 0 && (
@@ -202,27 +224,6 @@ const AddRecipe = () => {
         )}
 
         {/* // if user filled out the input fields allow user to submit data */}
-        {(currentAmount != "") & (currentIngredient != "") ? (
-          <div>
-            <button
-              className="primary-btn submit-btn"
-              onClick={() => {
-                setIngredientCosts([
-                  ...ingredientCosts,
-                  parseFloat(currentCost),
-                ]);
-                setAmountOfIngredients([...amountOfIngredients, currentAmount]);
-                setIngredients([...ingredients, currentIngredient]);
-                handleClearInput();
-              }}
-            >
-              + Ingredient
-            </button>
-            <br />
-          </div>
-        ) : (
-          ""
-        )}
 
         {/* // if user added cost, allow user to calculate the total */}
         {ingredientCosts.length > 0 ? (
