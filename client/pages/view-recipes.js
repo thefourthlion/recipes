@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import Axios from "axios";
+import { useUserAuth } from "../context/UserAuthContext";
+
 const Recipes = () => {
   const [recipes, setRecipes] = useState([]);
-
+  const { user } = useUserAuth();
   useEffect(() => {
     getRecipe();
   }, []);
@@ -16,7 +18,6 @@ const Recipes = () => {
       (res) => {
         const data = res.data;
         setRecipes(data);
-        console.log(data);
       }
     );
   };
@@ -51,14 +52,17 @@ const Recipes = () => {
 
               <div>
                 <br />
-                <button
-                  onClick={() => {
-                    deleteRecipe(val._id);
-                  }}
-                  className="secondary-btn"
-                >
-                  Delete Recipe
-                </button>
+
+                {user && (
+                  <button
+                    onClick={() => {
+                      deleteRecipe(val._id);
+                    }}
+                    className="secondary-btn"
+                  >
+                    Delete Recipe
+                  </button>
+                )}
               </div>
             </div>
           );

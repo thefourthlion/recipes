@@ -7,6 +7,7 @@ import Container from "react-bootstrap/Container";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 import ServingCostCalc from "../components/ServingCostCalc";
 import IngredientCostCalc from "../components/IngredientCostCalc";
+
 const AddRecipe = () => {
   // Declaring and initializing state variables using the useState hook
   const [name, setName] = useState("");
@@ -22,7 +23,7 @@ const AddRecipe = () => {
   const [totalCostRounded, setTotalCostRounded] = useState();
   const [showCalculators, setShowCalculators] = useState(false);
   const [showIngredients, setShowIngredients] = useState(false);
-
+  const [servingSize, setServingSize] = useState(0);
   let totalCost = 0;
 
   // Getting the current date and time using the toLocaleDateString method
@@ -75,6 +76,20 @@ const AddRecipe = () => {
             placeholder="Recipe Name"
             onChange={(e) => {
               setName(e.target.value);
+            }}
+          ></Form.Control>
+        </FloatingLabel>
+
+        <FloatingLabel
+          className="search-input-label recipe-inputs"
+          label="Serving Size"
+        >
+          <Form.Control
+            className="search-input-form-control search-input"
+            type="text"
+            placeholder="Serving Size"
+            onChange={(e) => {
+              setServingSize(e.target.value);
             }}
           ></Form.Control>
         </FloatingLabel>
@@ -219,6 +234,7 @@ const AddRecipe = () => {
                   totalCost = totalCost + ingredientCosts[i];
 
                   setTotalCostRounded(totalCost.toFixed(2));
+                  setServingCost((totalCostRounded / servingSize).toFixed(2));
                 }
               }}
             >
@@ -232,7 +248,10 @@ const AddRecipe = () => {
         )}
         {/* // if user calc cost, show them the total */}
         {totalCostRounded != undefined && (
-          <h1>Recipe's Total Cost = ${totalCostRounded}</h1>
+          <div>
+            <h1>Recipe's Total Cost = ${totalCostRounded}</h1>
+            <h1>Recipe's Serving Cost = ${servingCost}</h1>
+          </div>
         )}
         {/* // if there is at least one ingredient and amount, allow them to submit recipe*/}
 

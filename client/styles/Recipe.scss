@@ -1,3 +1,44 @@
 .Recipe {
-  margin-top: 100px;
+  margin: 100px 0 50px 0;
+  min-height: 70vh;
+  .instructions-header {
+    text-decoration: underline;
+    margin: 20px 0 20px 0;
+  }
+
+  .header {
+    text-decoration: underline;
+  }
+
+  .instructions {
+    max-width: 850px;
+    margin: 0 auto;
+  }
+
+  .recipe-img {
+    margin: 20px 0 20px 0;
+    width: 30vw;
+    height: auto;
+    border-radius: 20px;
+  }
+
+  .ing-list {
+    margin-top: 10px;
+  }
+
+  button {
+    margin: 20px 0 0 0;
+    width: 30vw;
+  }
+
+  @media only screen and (max-width: 900px) {
+    .recipe-img {
+      width: 80vw;
+      height: auto;
+    }
+
+    button {
+      width: 80vw;
+    }
+  }
 }

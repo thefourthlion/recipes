@@ -66,7 +66,7 @@ const Login = () => {
         {user ? (
           <div>
             <button
-              className="red-outline-btn"
+              className="secondary-btn"
               onClick={() => {
                 handleLogout();
                 setShowForm(!showForm);
