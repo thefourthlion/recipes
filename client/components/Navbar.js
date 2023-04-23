@@ -34,8 +34,8 @@ export default function Navbar() {
         </li>
       </ul>
 
-      <Link href="/" className="pc-none">
-        <h1>Recipes</h1>
+      <Link href="/" className="pc-none phone-header">
+        <h1>Everett's Recipes</h1>
       </Link>
 
       <div className="burger" onClick={() => setShowLinks(!showLinks)}>

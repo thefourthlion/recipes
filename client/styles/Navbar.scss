@@ -15,6 +15,15 @@
   top: 0;
   font-weight: bold;
 
+  .phone-header {
+    position: relative;
+    top: 2px;
+    right: 25px;
+  }
+  a:hover {
+    color: $primary-color;
+  }
+
   .burger {
     position: relative;
     top: 0px;
