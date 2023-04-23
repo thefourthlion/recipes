@@ -16,6 +16,10 @@ export default function Navbar() {
           </Link>
         </li>
 
+        <li className="nav-item pc-none">
+          <Link href="/">Home</Link>
+        </li>
+
         <li className="nav-item">
           <Link href="/add-recipe">Add Recipe</Link>
         </li>
@@ -23,8 +27,10 @@ export default function Navbar() {
           <Link href="/view-recipes">View Recipes</Link>
         </li>
 
-        <li className="nav-item">
-          <Link href="/login">Login</Link>
+        <li>
+          <Link className="login-link" href="/login">
+            <button className="primary-btn">Login</button>
+          </Link>
         </li>
       </ul>
 

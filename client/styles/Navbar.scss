@@ -56,6 +56,8 @@
 }
 
 .nav-item {
+  position: relative;
+  top: 5px;
   a:hover {
     color: $primary-color;
   }
