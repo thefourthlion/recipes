@@ -7,10 +7,16 @@ import Container from "react-bootstrap/Container";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 import ServingCostCalc from "../components/ServingCostCalc";
 import IngredientCostCalc from "../components/IngredientCostCalc";
+import FoodDb from "../components/FoodDb";
+
 import { useUserAuth } from "../context/UserAuthContext";
 
 const AddRecipe = () => {
   // Declaring and initializing state variables using the useState hook
+  const [carbs, setCarbs] = useState("");
+  const [protein, setProtein] = useState("");
+  const [fats, setFats] = useState("");
+
   const [name, setName] = useState("");
   const [instructions, setInstructions] = useState("");
   const [image, setImage] = useState("");
@@ -55,6 +61,9 @@ const AddRecipe = () => {
   const sendRecipeToDb = () => {
     Axios.post("https://api.recipes.everettdeleon.com/api/recipes/create", {
       name: name,
+      carbs: carbs,
+      protein: protein,
+      fats: fats,
       Instructions: instructions,
       ingredients: ingredients,
       amount: amountOfIngredients,
@@ -301,6 +310,49 @@ const AddRecipe = () => {
       ) : (
         <h1></h1>
       )}
+
+      <br />
+      <Container>
+        <Row>
+          <Col className="ing-inputs" md>
+            <FloatingLabel className="search-input-label" label="Carbs">
+              <Form.Control
+                className="search-input-form-control search-input"
+                type="text"
+                placeholder="Carbs"
+                onChange={(e) => {
+                  setCarbs(e.target.value);
+                }}
+              ></Form.Control>
+            </FloatingLabel>
+          </Col>
+          <Col className="ing-inputs" md>
+            <FloatingLabel className="search-input-label" label="Protein">
+              <Form.Control
+                className="search-input-form-control search-input"
+                type="text"
+                placeholder="Protein"
+                onChange={(e) => {
+                  setProtein(e.target.value);
+                }}
+              ></Form.Control>
+            </FloatingLabel>
+          </Col>
+          <Col className="ing-inputs" md>
+            <FloatingLabel className="search-input-label" label="Fats">
+              <Form.Control
+                className="search-input-form-control search-input"
+                type="text"
+                placeholder="Fats"
+                onChange={(e) => {
+                  setFats(e.target.value);
+                }}
+              ></Form.Control>
+            </FloatingLabel>
+          </Col>
+        </Row>
+      </Container>
+      <FoodDb />
     </div>
   );
 };
