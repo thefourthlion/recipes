@@ -14,6 +14,8 @@ import { useUserAuth } from "../context/UserAuthContext";
 const AddRecipe = () => {
   // Declaring and initializing state variables using the useState hook
   const [carbs, setCarbs] = useState("");
+  const [fiber, setFiber] = useState("");
+
   const [protein, setProtein] = useState("");
   const [fats, setFats] = useState("");
 
@@ -322,6 +324,18 @@ const AddRecipe = () => {
                 placeholder="Carbs"
                 onChange={(e) => {
                   setCarbs(e.target.value);
+                }}
+              ></Form.Control>
+            </FloatingLabel>
+          </Col>
+          <Col className="ing-inputs" md>
+            <FloatingLabel className="search-input-label" label="Fiber">
+              <Form.Control
+                className="search-input-form-control search-input"
+                type="text"
+                placeholder="Fiber"
+                onChange={(e) => {
+                  setFiber(e.target.value);
                 }}
               ></Form.Control>
             </FloatingLabel>
