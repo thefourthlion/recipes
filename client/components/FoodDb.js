@@ -21,64 +21,31 @@ const food = () => {
   const [protein, setProtein] = useState(0);
 
   const getSearchResults = () => {
+    setSearchResults([]);
     Axios.get(
       `https://api.recipes.everettdeleon.com/api/foundationalFood1/name/${searchTerm}`
     ).then((res) => {
       const data = res.data;
-      setSearchResults(data);
-      console.log(data);
+      setSearchResults((searchResults) => [...searchResults, ...data]);
+    });
+    Axios.get(
+      `https://api.recipes.everettdeleon.com/api/foundationalFood2/name/${searchTerm}`
+    ).then((res) => {
+      const data = res.data;
+      setSearchResults((searchResults) => [...searchResults, ...data]);
+    });
+    Axios.get(
+      `https://api.recipes.everettdeleon.com/api/legacyFoods/name/${searchTerm}`
+    ).then((res) => {
+      const data = res.data;
+      setSearchResults((searchResults) => [...searchResults, ...data]);
+    });
 
-      console.log(data[0].description);
-
-      //   const fiber = nutrition.filter(
-      //     (item) => item.nutrient.name == "Fiber, total dietary"
-      //   );
-
-      //   if (fiber.length > 0) {
-      //     // nutrition name
-      //     console.log(fiber[0].nutrient.name);
-      //     // nutrition amount
-      //     console.log(fiber[0].amount);
-
-      //     console.log("");
-      //   }
-
-      //   const saturatedFat = nutrition.filter(
-      //     (item) => item.nutrient.name == "Fatty acids, total saturated"
-      //   );
-
-      //   if (saturatedFat.length > 0) {
-      //     // nutrition name
-      //     console.log(saturatedFat[0].nutrient.name);
-      //     // nutrition amount
-      //     console.log(saturatedFat[0].amount);
-
-      //     console.log("");
-      //   }
-
-      //   const monounsaturatedFat = nutrition.filter(
-      //     (item) => item.nutrient.name == "Fatty acids, total monounsaturated"
-      //   );
-
-      //   if (monounsaturatedFat.length > 0) {
-      //     // nutrition name
-      //     console.log(monounsaturatedFat[0].nutrient.name);
-      //     // nutrition amount
-      //     console.log(monounsaturatedFat[0].amount);
-
-      //     console.log("");
-      //   }
-
-      //   const polyunsaturatedFat = nutrition.filter(
-      //     (item) => item.nutrient.name == "Fatty acids, total polyunsaturated"
-      //   );
-
-      //   if (polyunsaturatedFat.length > 0) {
-      //     // nutrition name
-      //     console.log(polyunsaturatedFat[0].nutrient.name);
-      //     // nutrition amount
-      //     console.log(polyunsaturatedFat[0].amount);
-      //   }
+    Axios.get(
+      `https://api.recipes.everettdeleon.com/api/surveyFood/name/${searchTerm}`
+    ).then((res) => {
+      const data = res.data;
+      setSearchResults((searchResults) => [...searchResults, ...data]);
     });
   };
 
