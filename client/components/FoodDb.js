@@ -17,6 +17,7 @@ const food = () => {
 
   const [fats, setFats] = useState(0);
   const [carbs, setCarbs] = useState(0);
+  const [fiber, setFiber] = useState(0);
   const [protein, setProtein] = useState(0);
 
   const getSearchResults = () => {
@@ -102,6 +103,20 @@ const food = () => {
         console.log(water[0].amount);
 
         console.log("");
+      }
+
+      const itemFiber = nutrition.filter(
+        (item) => item.nutrient.name == "Fiber, total dietary"
+      );
+
+      if (itemFiber.length > 0) {
+        // nutrition name
+        console.log(itemFiber[0].nutrient.name);
+        // nutrition amount
+        console.log(itemFiber[0].amount);
+
+        console.log("");
+        setFiber(fiber + (itemFiber[0].amount / 100) * grams);
       }
 
       const itemProtein = nutrition.filter(
@@ -221,6 +236,7 @@ const food = () => {
       </Container>
 
       <h1>Carbs : {carbs}</h1>
+      <h1>Fiber : {fiber}</h1>
       <h1>fats : {fats}</h1>
       <h1>protein : {protein}</h1>
     </div>
