@@ -15,6 +15,7 @@ const RecipesSchema = new mongoose.Schema(
     amount: [{ type: String, required: [true, "Please provide amount"] }],
     cost: { type: String },
     carbs: { type: String },
+    fiber: { type: String },
     protein: { type: String },
     fats: { type: String },
     image: { type: String },

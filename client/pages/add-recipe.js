@@ -64,6 +64,7 @@ const AddRecipe = () => {
     Axios.post("https://api.recipes.everettdeleon.com/api/recipes/create", {
       name: name,
       carbs: carbs,
+      fiber: fiber,
       protein: protein,
       fats: fats,
       Instructions: instructions,
