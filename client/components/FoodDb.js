@@ -21,7 +21,7 @@ const food = () => {
 
   const getSearchResults = () => {
     Axios.get(
-      `http://localhost:3002/api/foundationalFood1/name/${searchTerm}`
+      `https://api.recipes.everettdeleon.com/api/foundationalFood1/name/${searchTerm}`
     ).then((res) => {
       const data = res.data;
       setSearchResults(data);
@@ -83,7 +83,7 @@ const food = () => {
 
   const setNutritionValues = (foodNum, grams) => {
     Axios.get(
-      `http://localhost:3002/api/foundationalFood1/name/${searchTerm}`
+      `https://api.recipes.everettdeleon.com/api/foundationalFood1/name/${searchTerm}`
     ).then((res) => {
       const data = res.data;
       setSearchResults(data);
