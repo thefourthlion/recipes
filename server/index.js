@@ -38,3 +38,7 @@ app.listen(PORT, () => {
   console.log("✅ Listening on port " + PORT);
 });
 app.use("/api/recipes", require("./routes/Recipes"));
+app.use("/api/foundationalFood1", require("./routes/foundationalFood1"));
+app.use("/api/foundationalFood2", require("./routes/foundationalFood2"));
+app.use("/api/legacyFoods", require("./routes/legacyFoods"));
+app.use("/api/surveyFood", require("./routes/surveyFood"));
