@@ -1,0 +1,12 @@
+services:
+  recipes-server:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    container_name: recipes-server
+    ports:
+      - "4022:4022"
+    environment:
+      - PORT=4022
+    volumes:
+      - ./:/recipes-server
